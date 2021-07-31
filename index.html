@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+
+	<title>
+	New Movie Record
+	</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body style="background-color:ghostwhite;">
+
+	<img src="movieimage.jpg" width="330" height="200" />
+	
+	<h2 style="color:goldenrod;"> Add a New Movie:  </h2><br>
+
+	<form id="form">
+	<div>
+	<label for="ftitle">Title:</label> 
+	<input type="text" id="title" maxlength=200 required>
+	</div><br>
+	<div>
+	<label for="fdate">Release Date:</label> 
+	<input type="date" id="date" min="2015-01-10" required>
+	</div><br>
+	<div>
+	<label for="frating">Rating:</label> 
+	<input type="number" id="rating" min="1" max="5" required>
+	</div><br>
+	<input type="submit" value="Add Movie" id="submit" disabled="disabled"/>
+	</form>
+
+<script>
+$("input[type=submit]").attr('disabled','disabled');
+// When User Fills Out Form Completely
+$("form").keyup(function(){
+$("input[type=submit]").removeAttr('disabled');
+});
+</script>
+
+
+</body>
+
+</html>
